@@ -71,6 +71,11 @@ class ProductsController < ApplicationController
     end
   end
 
+  def search
+    @product_name = params[:product_name]
+    @products = Product.search(@product_name)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product

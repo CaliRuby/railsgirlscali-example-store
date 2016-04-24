@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :products
+
+  resources :products do
+    post 'search', on: :collection
+  end
 
   get 'products/:id/purchase', to: 'products#purchase', as: :purchase_product
 
