@@ -61,6 +61,16 @@ class ProductsController < ApplicationController
     end
   end
 
+  def purchase
+    @product = Product.find(params[:id])
+    @product.decrement_quantity
+    @product.save!
+
+    respond_to do |format|
+      format.html { redirect_to @product, notice: 'Producto comprado' }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product

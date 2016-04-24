@@ -16,4 +16,8 @@
   <%= @product.quantity %>
 </p>
 
+<h3>
+  <%= link_to 'Comprar', purchase_product_path(@product), style: "color:blue" %>
+</h3>
+
 <%= link_to 'Regresar a productos', products_path %>
