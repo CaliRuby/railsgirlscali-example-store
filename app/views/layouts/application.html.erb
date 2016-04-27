@@ -7,13 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<header>
   <%= render 'layouts/header' %>
   <% if admin_signed_in? %>
     <%= link_to "Cerrar Sesión", destroy_admin_session_path, method: :delete %>
   <% end %>
-</header>
-<%= yield %>
-
+  <%= yield %>
 </body>
 </html>
