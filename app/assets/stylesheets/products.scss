@@ -4,9 +4,12 @@
 
 .product-cont {
   text-align: center;
-  h3 {
+  h3 a {
     color: #d3360b;
     margin-bottom: 12px;
+  }
+  a:hover {
+    background: none;
   }
   p {
     margin-top: 10px;
