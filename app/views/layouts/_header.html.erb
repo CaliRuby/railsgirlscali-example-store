@@ -10,5 +10,16 @@
       </button>
       <a class="navbar-brand" href="#">Tienda Rails Girls Cali</a>
     </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <%= form_tag search_products_path, class: 'navbar-form navbar-left pull-right',
+                   role: 'search' do %>
+        <div class="form-group">
+          <%= text_field_tag :product_name, @product_name, class: 'form-control',
+                             placeholder: 'Buscar productos' %>
+        </div>
+        <%= submit_tag 'Buscar', class: 'btn btn-default' %>
+      <% end %>
+    </div>
   </div>
 </nav>
