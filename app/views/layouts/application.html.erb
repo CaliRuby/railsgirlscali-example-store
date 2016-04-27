@@ -8,6 +8,11 @@
 </head>
 <body>
   <%= render 'layouts/header' %>
+  <% if notice.present? %>
+    <div id="notice" class="alert alert-success alert-dismissible">
+      <%= notice %>
+    </div>
+  <% end %>
   <div class="container-fluid">
     <%= yield %>
   </div>
