@@ -1,23 +1,24 @@
-<p id="notice"><%= notice %></p>
+<div class="row product-details">
+  <div class="col-md-offset-2 col-md-4">
+    <h1 class="text-center"><%= @product.name %></h1>
+    <%= image_tag @product.picture, width: 300 %>
+  </div>
+  <div class="col-md-4 ">
+    <div class="description">
+      <p><%= @product.description %></p>
+      <p>
+        <strong>Precio:</strong>
+        <%= number_to_currency @product.price, precision: 0 %>
+      </p>
+      <p>
+        <strong>Cantidades disponibles:</strong>
+        <%= @product.quantity %>
+      </p>
+      <h3>
+        <%= link_to 'Comprar', purchase_product_path(@product),
+                    class: 'btn btn-lg btn-success'%>
+      </h3>
+    </div>
+  </div>
+</div>
 
-<h1><%= @product.name %></h1>
-<%= link_to image_tag(@product.picture, width: 300), @product %>
-<p>
-  <%= @product.description %>
-</p>
-
-<p>
-  <strong>Precio:</strong>
-  <%= number_to_currency @product.price, precision: 0 %>
-</p>
-
-<p>
-  <strong>Cantidades disponibles:</strong>
-  <%= @product.quantity %>
-</p>
-
-<h3>
-  <%= link_to 'Comprar', purchase_product_path(@product), style: "color:blue" %>
-</h3>
-
-<%= link_to 'Regresar a productos', products_path %>
