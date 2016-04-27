@@ -8,6 +8,7 @@
 </head>
 <body>
 <header>
+  <%= render 'layouts/header' %>
   <p>Buscar productos: </p>
   <%= form_tag search_products_path do %>
     <%= text_field_tag :product_name, @product_name %>
